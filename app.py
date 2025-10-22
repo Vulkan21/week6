@@ -3,7 +3,7 @@ from PIL import Image
 from io import BytesIO
 
 app = FastAPI()
-MOODLE_LOGIN = "c5803a15-0cfc-4719-ab77-c604044c9c5a"
+MOODLE_LOGIN = "vulkan21"
 
 @app.get("/login")
 def login():
@@ -20,3 +20,4 @@ async def size2json(image: UploadFile = File(...)):
     except Exception:
         raise HTTPException(status_code=400, detail="Invalid PNG")
     return Response(content=f'{{"width":{w},"height":{h}}}', media_type="application/json")
+
